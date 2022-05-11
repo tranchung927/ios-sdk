@@ -4,14 +4,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "MVVM",
+    name: "MVVM-iOS",
     platforms: [
             // Only add support for iOS 11 and up.
             .iOS(.v11)
         ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(name: "MVVM",targets: ["MVVM"]),
+        .library(name: "MVVM-iOS",targets: ["MVVM"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
