@@ -1,0 +1,11 @@
+framework module AppRouter {
+  umbrella header "AppRouter.h"
+
+  export *
+  module * { export * }
+}
+
+module AppRouter.Swift {
+    header "AppRouter-Swift.h"
+    requires objc
+}

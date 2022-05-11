@@ -1,0 +1,11 @@
+framework module AppNetworking {
+  umbrella header "AppNetworking.h"
+
+  export *
+  module * { export * }
+}
+
+module AppNetworking.Swift {
+    header "AppNetworking-Swift.h"
+    requires objc
+}

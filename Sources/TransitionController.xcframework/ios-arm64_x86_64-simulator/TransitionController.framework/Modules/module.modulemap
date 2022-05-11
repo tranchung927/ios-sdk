@@ -1,0 +1,11 @@
+framework module TransitionController {
+  umbrella header "TransitionController.h"
+
+  export *
+  module * { export * }
+}
+
+module TransitionController.Swift {
+    header "TransitionController-Swift.h"
+    requires objc
+}

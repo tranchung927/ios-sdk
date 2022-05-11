@@ -1,0 +1,327 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AppNetworking
+@_exported import AppNetworking
+import Foundation
+import MobileCoreServices
+import Swift
+import _Concurrency
+@_hasMissingDesignatedInitializers open class HTTPDecoding {
+  open class Factory {
+    public init()
+    open func create() -> Foundation.JSONDecoder
+    @objc deinit
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers open class HTTPEncoding {
+  open class Factory {
+    public init()
+    open func create() -> Foundation.JSONEncoder
+    @objc deinit
+  }
+  @objc deinit
+}
+public struct EmptyResponse : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct BoolResponse : Swift.Decodable {
+  public let success: Swift.Bool?
+  public init(from decoder: Swift.Decoder) throws
+}
+public protocol IDataTask {
+  func cancel()
+  func resume()
+}
+extension Foundation.URLSessionTask : AppNetworking.IDataTask {
+}
+extension Dispatch.DispatchWorkItem : AppNetworking.IDataTask {
+  public func resume()
+}
+extension Foundation.NSNotification.Name {
+  public static let httpClientDidResponseUnauthorizedError: Foundation.Notification.Name
+  public static let httpClientDidReceiveErrorResponse: Foundation.Notification.Name
+}
+final public class URLRequestBuilder {
+  public init(endpoint: AppNetworking.APIEndpoint)
+  final public func build() -> Foundation.URLRequest
+  @discardableResult
+  final public func path(_ path: Swift.String) -> AppNetworking.URLRequestBuilder
+  @discardableResult
+  final public func cachePolicy(_ policy: Foundation.URLRequest.CachePolicy) -> AppNetworking.URLRequestBuilder
+  @discardableResult
+  final public func httpMethod(_ method: AppNetworking.HTTPMethod) -> AppNetworking.URLRequestBuilder
+  @discardableResult
+  final public func httpHeaders(_ headers: [Swift.String : Swift.String]?) -> AppNetworking.URLRequestBuilder
+  @discardableResult
+  final public func parameters(_ params: AppNetworking.ParametersType?) -> AppNetworking.URLRequestBuilder
+  @discardableResult
+  final public func sendingData(_ data: Swift.Encodable? = nil, _ encodingFactory: AppNetworking.HTTPEncoding.Factory = HTTPEncoding.Factory()) -> AppNetworking.URLRequestBuilder
+  @discardableResult
+  final public func multipartDataBuilder(_ multipartData: AppNetworking.MultipartFormDataBuilderType) -> AppNetworking.URLRequestBuilder
+  @discardableResult
+  final public func urlEncodeDataBuilder(_ builder: AppNetworking.URLEncodedDataBuilder) -> AppNetworking.URLRequestBuilder
+  @discardableResult
+  final public func timeout(_ time: Foundation.TimeInterval) -> AppNetworking.URLRequestBuilder
+  @objc deinit
+}
+public struct MultipartFormDataChars {
+}
+public struct MultipartFormDataMimeType {
+}
+public protocol MultipartFormDataType {
+  func getData(boundary: Swift.String) -> Foundation.Data
+}
+public struct MultipartFormData : AppNetworking.MultipartFormDataType {
+  public enum Provider {
+    case string(Swift.String)
+    case data(Foundation.Data)
+    case file(Foundation.URL)
+  }
+  public init(provider: AppNetworking.MultipartFormData.Provider, name: Swift.String, fileName: Swift.String? = nil, mimeType: Swift.String? = nil)
+  public func getData(boundary: Swift.String) -> Foundation.Data
+}
+public protocol MultipartFormDataBuilderType {
+  var boundary: Swift.String { get }
+  func build() -> Foundation.Data
+}
+public class MultipartFormDataBuilder : AppNetworking.MultipartFormDataBuilderType {
+  public var boundary: Swift.String {
+    get
+    set
+  }
+  public var forms: [AppNetworking.MultipartFormDataType]
+  public init()
+  @discardableResult
+  public func append(_ formData: AppNetworking.MultipartFormDataType) -> AppNetworking.MultipartFormDataBuilder
+  public func build() -> Foundation.Data
+  @objc deinit
+}
+public enum HTTPStatusCode : Swift.Int, Swift.Error {
+  case `continue`
+  case switchingProtocols
+  case processing
+  case ok
+  case created
+  case accepted
+  case nonAuthoritativeInformation
+  case noContent
+  case resetContent
+  case partialContent
+  case multiStatus
+  case alreadyReported
+  case IMUsed
+  case multipleChoices
+  case movedPermanently
+  case found
+  case seeOther
+  case notModified
+  case useProxy
+  case switchProxy
+  case temporaryRedirect
+  case permenantRedirect
+  case badRequest
+  case unauthorized
+  case paymentRequired
+  case forbidden
+  case notFound
+  case methodNotAllowed
+  case notAcceptable
+  case proxyAuthenticationRequired
+  case requestTimeout
+  case conflict
+  case gone
+  case lengthRequired
+  case preconditionFailed
+  case payloadTooLarge
+  case URITooLong
+  case unsupportedMediaType
+  case rangeNotSatisfiable
+  case expectationFailed
+  case teapot
+  case misdirectedRequest
+  case unprocessableEntity
+  case locked
+  case failedDependency
+  case upgradeRequired
+  case preconditionRequired
+  case tooManyRequests
+  case requestHeaderFieldsTooLarge
+  case noResponse
+  case unavailableForLegalReasons
+  case SSLCertificateError
+  case SSLCertificateRequired
+  case HTTPRequestSentToHTTPSPort
+  case clientClosedRequest
+  case internalServerError
+  case notImplemented
+  case badGateway
+  case serviceUnavailable
+  case gatewayTimeout
+  case HTTPVersionNotSupported
+  case variantAlsoNegotiates
+  case insufficientStorage
+  case loopDetected
+  case notExtended
+  case networkAuthenticationRequired
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct CombineResponseExceptionAndData : Swift.Error {
+  public var dataError: Foundation.Data?
+  public var responseError: AppNetworking.HTTPResponseException?
+}
+extension Foundation.URLRequest {
+  public var method: AppNetworking.HTTPMethod? {
+    get
+    set
+  }
+}
+public enum HTTPRequestException : Swift.Int, Swift.Error {
+  case urlNil
+  case httpBodyNil
+  case indexOutOfBounce
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public typealias JSONType = [Swift.String : Any]
+public typealias ParametersType = [Swift.String : Any]
+public enum HTTPResponseException : Swift.Int, Swift.Error {
+  case badRequest
+  case unauthorized
+  case paymentRequired
+  case forbidden
+  case notFound
+  case methodNotAllowed
+  case notAcceptable
+  case proxyAuthenticationRequired
+  case requestTimeout
+  case conflict
+  case gone
+  case lengthRequired
+  case preconditionFailed
+  case payloadTooLarge
+  case URITooLong
+  case unsupportedMediaType
+  case rangeNotSatisfiable
+  case expectationFailed
+  case teapot
+  case misdirectedRequest
+  case unprocessableEntity
+  case locked
+  case failedDependency
+  case upgradeRequired
+  case preconditionRequired
+  case tooManyRequests
+  case requestHeaderFieldsTooLarge
+  case noResponse
+  case unavailableForLegalReasons
+  case SSLCertificateError
+  case SSLCertificateRequired
+  case HTTPRequestSentToHTTPSPort
+  case clientClosedRequest
+  case internalServerError
+  case notImplemented
+  case badGateway
+  case serviceUnavailable
+  case gatewayTimeout
+  case HTTPVersionNotSupported
+  case variantAlsoNegotiates
+  case insufficientStorage
+  case loopDetected
+  case notExtended
+  case networkAuthenticationRequired
+  case undefine
+  case noReturnData
+  case noStatusCode
+  case encodeSendingDataFail
+  case decodeReceivedDataFail
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension AppNetworking.HTTPResponseException : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public protocol INetworkLog {
+  var isEnabled: Swift.Bool { get set }
+  func d(_ items: Any...)
+  func i(_ items: Any...)
+  func w(_ items: Any...)
+  func e(_ items: Any...)
+}
+open class APIService<T> where T : AppNetworking.HTTPClient {
+  final public let client: T
+  required public init(client: T)
+  @discardableResult
+  public func dataTask<T>(method: AppNetworking.HTTPMethod, path: Swift.String, headers: [Swift.String : Swift.String]? = nil, params: AppNetworking.ParametersType? = nil, decoding: AppNetworking.HTTPDecoding.Factory = HTTPDecoding.Factory(), completion: ((Swift.Result<T, Swift.Error>) -> Swift.Void)?, completionWithResponse: ((Swift.Result<T, Swift.Error>, Foundation.URLResponse?) -> Swift.Void)? = nil) -> AppNetworking.IDataTask? where T : Swift.Decodable
+  @discardableResult
+  public func dataTask<R, T>(method: AppNetworking.HTTPMethod, path: Swift.String, headers: [Swift.String : Swift.String]? = nil, params: AppNetworking.ParametersType? = nil, sendingData: R?, encoding: AppNetworking.HTTPEncoding.Factory = HTTPEncoding.Factory(), decoding: AppNetworking.HTTPDecoding.Factory = HTTPDecoding.Factory(), completion: ((Swift.Result<T, Swift.Error>) -> Swift.Void)?, completionWithResponse: ((Swift.Result<T, Swift.Error>, Foundation.URLResponse?) -> Swift.Void)? = nil) -> AppNetworking.IDataTask? where R : Swift.Encodable, T : Swift.Decodable
+  @discardableResult
+  public func multipartDataTask<R>(method: AppNetworking.HTTPMethod, path: Swift.String, headers: [Swift.String : Swift.String]? = nil, params: AppNetworking.ParametersType? = nil, multiparts: [AppNetworking.MultipartFormDataType]?, decoding: AppNetworking.HTTPDecoding.Factory = HTTPDecoding.Factory(), completion: ((Swift.Result<R, Swift.Error>) -> Swift.Void)?, completionWithResponse: ((Swift.Result<R, Swift.Error>, Foundation.URLResponse?) -> Swift.Void)? = nil) -> AppNetworking.IDataTask? where R : Swift.Decodable
+  @discardableResult
+  public func urlEncodeDataTask<R>(method: AppNetworking.HTTPMethod, path: Swift.String, headers: [Swift.String : Swift.String]? = nil, params: AppNetworking.ParametersType? = nil, builder: AppNetworking.URLEncodedDataBuilder, decoding: AppNetworking.HTTPDecoding.Factory = HTTPDecoding.Factory(), completion: ((Swift.Result<R, Swift.Error>) -> Swift.Void)?, completionWithResponse: ((Swift.Result<R, Swift.Error>, Foundation.URLResponse?) -> Swift.Void)? = nil) -> AppNetworking.IDataTask? where R : Swift.Decodable
+  open func getEndpoint() -> AppNetworking.APIEndpoint?
+  open func getDefaultHeaders() -> [Swift.String : Swift.String]
+  open func getDefaultParams() -> AppNetworking.ParametersType
+  @objc deinit
+}
+open class HTTPClient {
+  public init(session: Foundation.URLSession)
+  public var enableGETLogs: Swift.Bool
+  public func invokeLog(_ log: AppNetworking.INetworkLog)
+  @discardableResult
+  public func dataTask<R>(request: Foundation.URLRequest, decodeFactory: AppNetworking.HTTPDecoding.Factory, completion: ((Swift.Result<R, Swift.Error>) -> Swift.Void)?, completionWithResponse: ((Swift.Result<R, Swift.Error>, Foundation.URLResponse?) -> Swift.Void)? = nil, function: Swift.String = #function) -> AppNetworking.IDataTask where R : Swift.Decodable
+  @objc deinit
+}
+public enum HTTPMethod : Swift.String {
+  case get
+  case put
+  case post
+  case patch
+  case delete
+  case head
+  case options
+  case trace
+  case connect
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol APIEndpoint {
+  var scheme: Swift.String { get }
+  var components: (host: Swift.String, basePath: Swift.String) { get }
+  var port: Swift.Int? { get }
+}
+final public class URLEncodedDataBuilder {
+  public init()
+  @discardableResult
+  final public func append(name: Swift.String, value: Swift.String?) -> AppNetworking.URLEncodedDataBuilder
+  final public func build() -> Foundation.Data?
+  @objc deinit
+}
+extension AppNetworking.HTTPStatusCode : Swift.Equatable {}
+extension AppNetworking.HTTPStatusCode : Swift.Hashable {}
+extension AppNetworking.HTTPStatusCode : Swift.RawRepresentable {}
+extension AppNetworking.HTTPRequestException : Swift.Equatable {}
+extension AppNetworking.HTTPRequestException : Swift.Hashable {}
+extension AppNetworking.HTTPRequestException : Swift.RawRepresentable {}
+extension AppNetworking.HTTPResponseException : Swift.Equatable {}
+extension AppNetworking.HTTPResponseException : Swift.Hashable {}
+extension AppNetworking.HTTPResponseException : Swift.RawRepresentable {}
+extension AppNetworking.HTTPMethod : Swift.Equatable {}
+extension AppNetworking.HTTPMethod : Swift.Hashable {}
+extension AppNetworking.HTTPMethod : Swift.RawRepresentable {}
