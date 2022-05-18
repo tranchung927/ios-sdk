@@ -7,7 +7,6 @@ import Swift
 import UIKit
 import _Concurrency
 @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class MVVMViewController<VM> : UIKit.UIViewController, MVVM.PView where VM : MVVM.PViewModel {
-  public typealias ViewModel = VM
   @_Concurrency.MainActor(unsafe) public var viewModel: VM {
     get
   }
@@ -21,9 +20,10 @@ import _Concurrency
   @_Concurrency.MainActor(unsafe) open func viewDidRelease()
   @_Concurrency.MainActor(unsafe) open func viewOnBind()
   @_Concurrency.MainActor(unsafe) open func viewOnSetup()
-  @_Concurrency.MainActor(unsafe) open func invoke(viewModel: VM)
+  @_Concurrency.MainActor(unsafe) public func invoke(viewModel: VM)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  public typealias ViewModel = VM
 }
 public protocol PViewModel {
   func viewModelDidReady()
@@ -32,6 +32,10 @@ public protocol PViewModel {
   func viewModelWillInactive()
   func viewModelDidInactive()
   func viewModelDidRelease()
+}
+public protocol PTabbarAnimation : UIKit.UIViewControllerAnimatedTransitioning {
+  var isReversed: Swift.Bool { get set }
+  var duration: Foundation.TimeInterval { get set }
 }
 @objc @_inheritsConvenienceInitializers open class MVVMViewModel : ObjectiveC.NSObject, MVVM.PViewModel {
   @objc override dynamic public init()
@@ -51,4 +55,37 @@ public protocol PView {
   func viewOnBind()
   func viewOnSetup()
   func invoke(viewModel: Self.ViewModel)
+}
+@_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class MVVMTabBarController<VM> : UIKit.UITabBarController, MVVM.PView, UIKit.UITabBarControllerDelegate where VM : MVVM.PViewModel {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var canBecomeFirstResponder: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) public var viewModel: VM {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var animation: MVVM.PTabbarAnimation {
+    get
+  }
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var shouldAutorotate: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) open func viewDidReady()
+  @_Concurrency.MainActor(unsafe) open func viewDidRelease()
+  @_Concurrency.MainActor(unsafe) open func viewOnBind()
+  @_Concurrency.MainActor(unsafe) open func viewOnSetup()
+  @_Concurrency.MainActor(unsafe) public func invoke(viewModel: VM)
+  @_Concurrency.MainActor(unsafe) public func invokeAnimation(_ animation: MVVM.PTabbarAnimation)
+  @_Concurrency.MainActor(unsafe) @objc public func tabBarController(_ tabBarController: UIKit.UITabBarController, animationControllerForTransitionFrom fromVC: UIKit.UIViewController, to toVC: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  public typealias ViewModel = VM
 }
