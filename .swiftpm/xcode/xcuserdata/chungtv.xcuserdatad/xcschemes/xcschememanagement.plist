@@ -34,6 +34,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>UIComponent.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>iOS SDK-Package.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -52,7 +57,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>AppNetworking</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AppRouter</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CoordinatorLayout</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>MVVM</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>TransitionController</key>
 		<dict>
 			<key>primary</key>
 			<true/>
