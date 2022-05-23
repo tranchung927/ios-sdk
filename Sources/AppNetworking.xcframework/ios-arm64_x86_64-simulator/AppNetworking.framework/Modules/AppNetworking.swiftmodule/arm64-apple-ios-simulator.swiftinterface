@@ -2,6 +2,7 @@
 // swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AppNetworking
 @_exported import AppNetworking
+import Combine
 import Foundation
 import MobileCoreServices
 import Swift
@@ -191,6 +192,10 @@ public enum HTTPRequestException : Swift.Int, Swift.Error {
     get
   }
 }
+extension AppNetworking.HTTPClient {
+  @available(iOS 13, *)
+  public func dataTaskPublisher<R>(request: Foundation.URLRequest, decodeFactory: AppNetworking.HTTPDecoding.Factory, function: Swift.String = #function) -> Combine.AnyPublisher<R, Swift.Error> where R : Swift.Decodable
+}
 public typealias JSONType = [Swift.String : Any]
 public typealias ParametersType = [Swift.String : Any]
 public enum HTTPResponseException : Swift.Int, Swift.Error {
@@ -278,6 +283,7 @@ open class APIService<T> where T : AppNetworking.HTTPClient {
   @objc deinit
 }
 open class HTTPClient {
+  final public let session: Foundation.URLSession
   public init(session: Foundation.URLSession)
   public var enableGETLogs: Swift.Bool
   public func invokeLog(_ log: AppNetworking.INetworkLog)
