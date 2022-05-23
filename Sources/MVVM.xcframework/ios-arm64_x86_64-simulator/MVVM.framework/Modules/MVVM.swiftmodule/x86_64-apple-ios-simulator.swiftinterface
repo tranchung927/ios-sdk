@@ -81,6 +81,7 @@ public protocol PView {
   @objc dynamic public init()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func setViewControllers(_ viewControllers: [UIKit.UIViewController]?, animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) open func viewDidReady()
   @_Concurrency.MainActor(unsafe) open func viewDidRelease()
   @_Concurrency.MainActor(unsafe) open func viewOnBind()
