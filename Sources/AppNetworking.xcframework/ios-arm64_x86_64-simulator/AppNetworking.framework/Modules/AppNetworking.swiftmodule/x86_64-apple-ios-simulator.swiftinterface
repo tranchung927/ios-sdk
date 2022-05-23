@@ -174,9 +174,9 @@ public enum HTTPStatusCode : Swift.Int, Swift.Error {
 }
 @available(iOS 13, *)
 extension AppNetworking.APIService {
-  public func dataTaskPublisher<T>(method: AppNetworking.HTTPMethod, path: Swift.String, headers: [Swift.String : Swift.String]? = nil, params: AppNetworking.ParametersType? = nil, decoding: AppNetworking.HTTPDecoding.Factory = HTTPDecoding.Factory()) -> Combine.AnyPublisher<T, Swift.Error> where T : Swift.Decodable
-  public func dataTaskPublisher<R, T>(method: AppNetworking.HTTPMethod, path: Swift.String, headers: [Swift.String : Swift.String]? = nil, params: AppNetworking.ParametersType? = nil, sendingData: R?, encoding: AppNetworking.HTTPEncoding.Factory = HTTPEncoding.Factory(), decoding: AppNetworking.HTTPDecoding.Factory = HTTPDecoding.Factory()) -> Combine.AnyPublisher<T, Swift.Error> where R : Swift.Encodable, T : Swift.Decodable
-  public func multipartDataTaskPublisher<R>(method: AppNetworking.HTTPMethod, path: Swift.String, headers: [Swift.String : Swift.String]? = nil, params: AppNetworking.ParametersType? = nil, multiparts: [AppNetworking.MultipartFormDataType]?, decoding: AppNetworking.HTTPDecoding.Factory = HTTPDecoding.Factory()) -> Combine.AnyPublisher<R, Swift.Error> where R : Swift.Decodable
+  public func dataTaskPublisher<T>(method: AppNetworking.HTTPMethod, path: Swift.String, headers: [Swift.String : Swift.String]? = nil, params: AppNetworking.ParametersType? = nil, decoding: AppNetworking.HTTPDecoding.Factory = HTTPDecoding.Factory()) -> Combine.AnyPublisher<T, Swift.Error> where T : AppNetworking.APIResponse
+  public func dataTaskPublisher<R, T>(method: AppNetworking.HTTPMethod, path: Swift.String, headers: [Swift.String : Swift.String]? = nil, params: AppNetworking.ParametersType? = nil, sendingData: R?, encoding: AppNetworking.HTTPEncoding.Factory = HTTPEncoding.Factory(), decoding: AppNetworking.HTTPDecoding.Factory = HTTPDecoding.Factory()) -> Combine.AnyPublisher<T, Swift.Error> where R : Swift.Encodable, T : AppNetworking.APIResponse
+  public func multipartDataTaskPublisher<R>(method: AppNetworking.HTTPMethod, path: Swift.String, headers: [Swift.String : Swift.String]? = nil, params: AppNetworking.ParametersType? = nil, multiparts: [AppNetworking.MultipartFormDataType]?, decoding: AppNetworking.HTTPDecoding.Factory = HTTPDecoding.Factory()) -> Combine.AnyPublisher<R, Swift.Error> where R : AppNetworking.APIResponse
 }
 public struct CombineResponseExceptionAndData : Swift.Error {
   public var dataError: Foundation.Data?
@@ -200,7 +200,7 @@ public enum HTTPRequestException : Swift.Int, Swift.Error {
 }
 extension AppNetworking.HTTPClient {
   @available(iOS 13, *)
-  public func dataTaskPublisher<R>(request: Foundation.URLRequest, decodeFactory: AppNetworking.HTTPDecoding.Factory, function: Swift.String = #function) -> Combine.AnyPublisher<R, Swift.Error> where R : Swift.Decodable
+  public func dataTaskPublisher<R>(request: Foundation.URLRequest, decodeFactory: AppNetworking.HTTPDecoding.Factory, function: Swift.String = #function) -> Combine.AnyPublisher<R, Swift.Error> where R : AppNetworking.APIResponse
 }
 public typealias JSONType = [Swift.String : Any]
 public typealias ParametersType = [Swift.String : Any]
@@ -317,6 +317,9 @@ public protocol APIEndpoint {
   var scheme: Swift.String { get }
   var components: (host: Swift.String, basePath: Swift.String) { get }
   var port: Swift.Int? { get }
+}
+public protocol APIResponse : Swift.Decodable {
+  func isSuccessfull() -> Swift.Bool
 }
 final public class URLEncodedDataBuilder {
   public init()
