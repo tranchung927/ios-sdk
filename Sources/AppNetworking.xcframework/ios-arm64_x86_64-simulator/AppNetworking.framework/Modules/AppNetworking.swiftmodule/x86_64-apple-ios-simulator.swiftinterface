@@ -172,6 +172,12 @@ public enum HTTPStatusCode : Swift.Int, Swift.Error {
     get
   }
 }
+@available(iOS 13, *)
+extension AppNetworking.APIService {
+  public func dataTaskPublisher<T>(method: AppNetworking.HTTPMethod, path: Swift.String, headers: [Swift.String : Swift.String]? = nil, params: AppNetworking.ParametersType? = nil, decoding: AppNetworking.HTTPDecoding.Factory = HTTPDecoding.Factory()) -> Combine.AnyPublisher<T, Swift.Error> where T : Swift.Decodable
+  public func dataTaskPublisher<R, T>(method: AppNetworking.HTTPMethod, path: Swift.String, headers: [Swift.String : Swift.String]? = nil, params: AppNetworking.ParametersType? = nil, sendingData: R?, encoding: AppNetworking.HTTPEncoding.Factory = HTTPEncoding.Factory(), decoding: AppNetworking.HTTPDecoding.Factory = HTTPDecoding.Factory()) -> Combine.AnyPublisher<T, Swift.Error> where R : Swift.Encodable, T : Swift.Decodable
+  public func multipartDataTaskPublisher<R>(method: AppNetworking.HTTPMethod, path: Swift.String, headers: [Swift.String : Swift.String]? = nil, params: AppNetworking.ParametersType? = nil, multiparts: [AppNetworking.MultipartFormDataType]?, decoding: AppNetworking.HTTPDecoding.Factory = HTTPDecoding.Factory()) -> Combine.AnyPublisher<R, Swift.Error> where R : Swift.Decodable
+}
 public struct CombineResponseExceptionAndData : Swift.Error {
   public var dataError: Foundation.Data?
   public var responseError: AppNetworking.HTTPResponseException?
