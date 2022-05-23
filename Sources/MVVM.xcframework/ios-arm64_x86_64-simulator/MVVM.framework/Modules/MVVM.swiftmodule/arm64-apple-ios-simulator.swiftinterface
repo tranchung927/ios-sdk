@@ -78,6 +78,9 @@ public protocol PView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var shouldAutorotate: Swift.Bool {
     @_Concurrency.MainActor(unsafe) @objc get
   }
+  @objc dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @_Concurrency.MainActor(unsafe) open func viewDidReady()
   @_Concurrency.MainActor(unsafe) open func viewDidRelease()
   @_Concurrency.MainActor(unsafe) open func viewOnBind()
@@ -85,7 +88,5 @@ public protocol PView {
   @_Concurrency.MainActor(unsafe) public func invoke(viewModel: VM)
   @_Concurrency.MainActor(unsafe) public func invokeAnimation(_ animation: MVVM.PTabbarAnimation)
   @_Concurrency.MainActor(unsafe) @objc public func tabBarController(_ tabBarController: UIKit.UITabBarController, animationControllerForTransitionFrom fromVC: UIKit.UIViewController, to toVC: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   public typealias ViewModel = VM
 }
