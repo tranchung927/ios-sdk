@@ -82,6 +82,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>UIComponent</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>iOS SDK</key>
 		<dict>
 			<key>primary</key>
