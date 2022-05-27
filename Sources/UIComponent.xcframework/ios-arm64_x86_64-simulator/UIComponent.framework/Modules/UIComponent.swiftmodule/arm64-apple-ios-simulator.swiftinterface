@@ -54,10 +54,10 @@ extension UIKit.UIColor {
   @_Concurrency.MainActor(unsafe) open class var bundle: Foundation.Bundle {
     get
   }
-  @_Concurrency.MainActor(unsafe) public static var reuseIdentifier: Swift.String {
+  @_Concurrency.MainActor(unsafe) open class var reuseIdentifier: Swift.String {
     get
   }
-  @_Concurrency.MainActor(unsafe) public static var nib: UIKit.UINib {
+  @_Concurrency.MainActor(unsafe) open class var nib: UIKit.UINib {
     get
   }
   @_Concurrency.MainActor(unsafe) open class func cellHeight(for data: Any?) -> CoreGraphics.CGFloat
