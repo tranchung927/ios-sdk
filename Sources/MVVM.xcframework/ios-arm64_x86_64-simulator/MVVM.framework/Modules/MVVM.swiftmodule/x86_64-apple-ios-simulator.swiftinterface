@@ -25,6 +25,25 @@ import _Concurrency
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   public typealias ViewModel = VM
 }
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class ACTableViewCell : UIKit.UITableViewCell {
+  @_Concurrency.MainActor(unsafe) open var isEnableHighlight: Swift.Bool
+  @_Concurrency.MainActor(unsafe) open var selectedColor: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) open class var bundle: Foundation.Bundle {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open class var reuseIdentifier: Swift.String {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open class var nib: UIKit.UINib {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open class func cellHeight(for data: Any?) -> CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func setSelected(_ selected: Swift.Bool, animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) open func commonInit()
+  @_Concurrency.MainActor(unsafe) open func updateDisplay(with data: Any?)
+  @objc deinit
+}
 public protocol PViewModel {
   func viewModelDidReady()
   func viewModelWillActive()
@@ -37,6 +56,163 @@ public protocol PTabbarAnimation : UIKit.UIViewControllerAnimatedTransitioning {
   var isReversed: Swift.Bool { get set }
   var duration: Foundation.TimeInterval { get set }
 }
+extension UIKit.UIImage {
+  public static func from(color: UIKit.UIColor, size: CoreGraphics.CGSize = CGSize(width: 1, height: 1), cornerRadius: CoreGraphics.CGFloat = 0.0) -> UIKit.UIImage?
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class ACBaseTableView : UIKit.UITableView {
+  @_Concurrency.MainActor(unsafe) open var tableSeparator: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) convenience public init(frame: CoreGraphics.CGRect = .zero, style: UIKit.UITableView.Style = .plain, dataSource: UIKit.UITableViewDataSource?, delegate: UIKit.UITableViewDelegate?)
+  @_Concurrency.MainActor(unsafe) open func commonSetup()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect, style: UIKit.UITableView.Style)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension UIKit.UITableView {
+  @_Concurrency.MainActor(unsafe) public func registerNib(for cellClass: MVVM.ACTableViewCell.Type)
+  @_Concurrency.MainActor(unsafe) public func registerNib(for cellClass: MVVM.ACTableViewCell.Type, reuseId: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func registerClass(for cellClass: MVVM.ACTableViewCell.Type)
+  @_Concurrency.MainActor(unsafe) public func registerClass(for cellClass: MVVM.ACTableViewCell.Type, reuseId: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func registerNibs<T>(for cellClasses: [T.Type]) where T : MVVM.ACTableViewCell
+  @_Concurrency.MainActor(unsafe) public func dequeueReusableCell<T>(type: T.Type, withIdentifier identifier: Swift.String? = nil, for indexPath: Foundation.IndexPath) -> T where T : MVVM.ACTableViewCell
+}
+public enum ACTabBarItemContentMode : Swift.Int {
+  case alwaysOriginal
+  case alwaysTemplate
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class ACTabBarItemContentView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) open var title: Swift.String? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var image: UIKit.UIImage? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var selectedImage: UIKit.UIImage? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var enabled: Swift.Bool
+  @_Concurrency.MainActor(unsafe) open var selected: Swift.Bool
+  @_Concurrency.MainActor(unsafe) open var highlighted: Swift.Bool
+  @_Concurrency.MainActor(unsafe) open var textColor: UIKit.UIColor {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var highlightTextColor: UIKit.UIColor {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var iconColor: UIKit.UIColor {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var highlightIconColor: UIKit.UIColor {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var backdropColor: UIKit.UIColor {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var highlightBackdropColor: UIKit.UIColor {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var renderingMode: UIKit.UIImage.RenderingMode {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var itemContentMode: MVVM.ACTabBarItemContentMode {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var titlePositionAdjustment: UIKit.UIOffset {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var insets: UIKit.UIEdgeInsets {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var imageView: UIKit.UIImageView
+  @_Concurrency.MainActor(unsafe) open var titleLabel: UIKit.UILabel
+  @_Concurrency.MainActor(unsafe) open var badgeValue: Swift.String? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var badgeColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var badgeView: MVVM.ACTabBarItemBadgeView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var badgeOffset: UIKit.UIOffset {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) open func updateDisplay()
+  @_Concurrency.MainActor(unsafe) open func updateLayout()
+  @_Concurrency.MainActor(unsafe) open func selectAnimation(animated: Swift.Bool, completion: (() -> ())?)
+  @_Concurrency.MainActor(unsafe) open func deselectAnimation(animated: Swift.Bool, completion: (() -> ())?)
+  @_Concurrency.MainActor(unsafe) open func reselectAnimation(animated: Swift.Bool, completion: (() -> ())?)
+  @_Concurrency.MainActor(unsafe) open func highlightAnimation(animated: Swift.Bool, completion: (() -> ())?)
+  @_Concurrency.MainActor(unsafe) open func dehighlightAnimation(animated: Swift.Bool, completion: (() -> ())?)
+  @_Concurrency.MainActor(unsafe) open func badgeChangedAnimation(animated: Swift.Bool, completion: (() -> ())?)
+  @objc deinit
+}
+@objc @available(iOS 8.0, *)
+@_Concurrency.MainActor(unsafe) open class ACTabBarItem : UIKit.UITabBarItem {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var tag: Swift.Int {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isEnabled: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var title: Swift.String? {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var image: UIKit.UIImage? {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var selectedImage: UIKit.UIImage? {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set(newValue)
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var badgeValue: Swift.String? {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set(newValue)
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var titlePositionAdjustment: UIKit.UIOffset {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set(newValue)
+  }
+  @available(iOS 8.0, *)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var badgeColor: UIKit.UIColor? {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set(newValue)
+  }
+  @_Concurrency.MainActor(unsafe) open var contentView: MVVM.ACTabBarItemContentView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public init(_ contentView: MVVM.ACTabBarItemContentView = ACTabBarItemContentView(), title: Swift.String? = nil, image: UIKit.UIImage? = nil, selectedImage: UIKit.UIImage? = nil, tag: Swift.Int = 0)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers open class MVVMViewModel : ObjectiveC.NSObject, MVVM.PViewModel {
   @objc override dynamic public init()
   @objc deinit
@@ -47,6 +223,105 @@ public protocol PTabbarAnimation : UIKit.UIViewControllerAnimatedTransitioning {
   open func viewModelDidInactive()
   open func viewModelDidRelease()
 }
+extension UIKit.UIColor {
+  convenience public init(hex: Swift.String)
+  convenience public init(hsba: (h: CoreGraphics.CGFloat, s: CoreGraphics.CGFloat, b: CoreGraphics.CGFloat, a: CoreGraphics.CGFloat))
+  public func hexString() -> Swift.String
+  public func rgba() -> (r: CoreGraphics.CGFloat, g: CoreGraphics.CGFloat, b: CoreGraphics.CGFloat, a: CoreGraphics.CGFloat)
+  public func hsba() -> (h: CoreGraphics.CGFloat, s: CoreGraphics.CGFloat, b: CoreGraphics.CGFloat, a: CoreGraphics.CGFloat)
+  public func lightenedColor(_ percentage: CoreGraphics.CGFloat) -> UIKit.UIColor
+  public func darkenedColor(_ percentage: CoreGraphics.CGFloat) -> UIKit.UIColor
+  public func red() -> CoreGraphics.CGFloat
+  public func green() -> CoreGraphics.CGFloat
+  public func blue() -> CoreGraphics.CGFloat
+  public func alpha() -> CoreGraphics.CGFloat
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class ACTabBarItemBadgeView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public static var defaultBadgeColor: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) open var badgeColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var badgeValue: Swift.String? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var imageView: UIKit.UIImageView
+  @_Concurrency.MainActor(unsafe) open var badgeLabel: UIKit.UILabel
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func sizeThatFits(_ size: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  @objc deinit
+}
+public enum ACTabBarItemPositioning : Swift.Int {
+  case automatic
+  case fill
+  case centered
+  case fillExcludeSeparator
+  case fillIncludeSeparator
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class ACTabBar : UIKit.UITabBar {
+  @_Concurrency.MainActor(unsafe) public var itemEdgeInsets: UIKit.UIEdgeInsets
+  @_Concurrency.MainActor(unsafe) public var itemCustomPositioning: MVVM.ACTabBarItemPositioning? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var moreContentView: MVVM.ACTabBarItemContentView? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var items: [UIKit.UITabBarItem]? {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open var isEditing: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func setItems(_ items: [UIKit.UITabBarItem]?, animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func beginCustomizingItems(_ items: [UIKit.UITabBarItem])
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func endCustomizing(animated: Swift.Bool) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func point(inside point: CoreGraphics.CGPoint, with event: UIKit.UIEvent?) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class ACTabBarItemMoreContentView : MVVM.ACTabBarItemContentView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public func systemMore(highlighted isHighlighted: Swift.Bool) -> UIKit.UIImage?
+  @objc deinit
+}
+public typealias ACTabBarControllerShouldHijackHandler = ((_ tabBarController: UIKit.UITabBarController, _ viewController: UIKit.UIViewController, _ index: Swift.Int) -> (Swift.Bool))
+public typealias ACTabBarControllerDidHijackHandler = ((_ tabBarController: UIKit.UITabBarController, _ viewController: UIKit.UIViewController, _ index: Swift.Int) -> (Swift.Void))
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class ACTabBarController : UIKit.UITabBarController {
+  @_Concurrency.MainActor(unsafe) public static func printError(_ description: Swift.String)
+  @_Concurrency.MainActor(unsafe) public static func isShowingMore(_ tabBarController: UIKit.UITabBarController?) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) open var shouldHijackHandler: MVVM.ACTabBarControllerShouldHijackHandler?
+  @_Concurrency.MainActor(unsafe) open var didHijackHandler: MVVM.ACTabBarControllerDidHijackHandler?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var selectedViewController: UIKit.UIViewController? {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var selectedIndex: Swift.Int {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func tabBar(_ tabBar: UIKit.UITabBar, didSelect item: UIKit.UITabBarItem)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func tabBar(_ tabBar: UIKit.UITabBar, willBeginCustomizing items: [UIKit.UITabBarItem])
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func tabBar(_ tabBar: UIKit.UITabBar, didEndCustomizing items: [UIKit.UITabBarItem], changed: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
 public protocol PView {
   associatedtype ViewModel
   var viewModel: Self.ViewModel { get }
@@ -56,7 +331,7 @@ public protocol PView {
   func viewOnSetup()
   func invoke(viewModel: Self.ViewModel)
 }
-@_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class MVVMTabBarController<VM> : UIKit.UITabBarController, MVVM.PView, UIKit.UITabBarControllerDelegate where VM : MVVM.PViewModel {
+@_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class MVVMTabBarController<VM> : MVVM.ACTabBarController, MVVM.PView, UIKit.UITabBarControllerDelegate where VM : MVVM.PViewModel {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var canBecomeFirstResponder: Swift.Bool {
     @_Concurrency.MainActor(unsafe) @objc get
   }
@@ -91,3 +366,13 @@ public protocol PView {
   @_Concurrency.MainActor(unsafe) @objc public func tabBarController(_ tabBarController: UIKit.UITabBarController, animationControllerForTransitionFrom fromVC: UIKit.UIViewController, to toVC: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
   public typealias ViewModel = VM
 }
+extension UIKit.UIButton {
+  @objc(setBackgroundColor:forState:) @_Concurrency.MainActor(unsafe) dynamic public func setBackgroundColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @_Concurrency.MainActor(unsafe) public func setImage(_ image: UIKit.UIImage?, with color: UIKit.UIColor, and renderMode: UIKit.UIImage.RenderingMode = .alwaysTemplate, for state: UIKit.UIControl.State)
+}
+extension MVVM.ACTabBarItemContentMode : Swift.Equatable {}
+extension MVVM.ACTabBarItemContentMode : Swift.Hashable {}
+extension MVVM.ACTabBarItemContentMode : Swift.RawRepresentable {}
+extension MVVM.ACTabBarItemPositioning : Swift.Equatable {}
+extension MVVM.ACTabBarItemPositioning : Swift.Hashable {}
+extension MVVM.ACTabBarItemPositioning : Swift.RawRepresentable {}

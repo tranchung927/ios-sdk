@@ -197,7 +197,10 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreGraphics;
+@import Foundation;
 @import ObjectiveC;
+@import UIKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -215,11 +218,134 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class NSCoder;
+
+SWIFT_CLASS("_TtC4MVVM15ACBaseTableView")
+@interface ACBaseTableView : UITableView
+- (nonnull instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITabBarItem;
+@class UIEvent;
+
+/// ACTabBar is a highly customized subclass of UITabBar, which implements the effect of customizing tabBarItem by adding UIControl. Currently, it supports the setting of most properties of the tabBar, such as delegate, items, selectedImge, itemPositioning, itemWidth, itemSpacing, etc. In the future, the setting effect of the original properties of the tabBar will be optimized in more detail.
+SWIFT_CLASS("_TtC4MVVM8ACTabBar")
+@interface ACTabBar : UITabBar
+@property (nonatomic, copy) NSArray<UITabBarItem *> * _Nullable items;
+- (void)setItems:(NSArray<UITabBarItem *> * _Nullable)items animated:(BOOL)animated;
+- (void)beginCustomizingItems:(NSArray<UITabBarItem *> * _Nonnull)items;
+- (BOOL)endCustomizingAnimated:(BOOL)animated SWIFT_WARN_UNUSED_RESULT;
+- (void)layoutSubviews;
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@class UIViewController;
+@class NSString;
+@class NSBundle;
+
+SWIFT_CLASS("_TtC4MVVM18ACTabBarController")
+@interface ACTabBarController : UITabBarController
+/// Observer tabBarController’s selectedViewController. change its selection when it will-set.
+@property (nonatomic, strong) UIViewController * _Nullable selectedViewController;
+/// Observer tabBarController’s selectedIndex. change its selection when it will-set.
+@property (nonatomic) NSUInteger selectedIndex;
+/// Customize set tabBar use KVC.
+- (void)viewDidLoad;
+- (void)tabBar:(UITabBar * _Nonnull)tabBar didSelectItem:(UITabBarItem * _Nonnull)item;
+- (void)tabBar:(UITabBar * _Nonnull)tabBar willBeginCustomizingItems:(NSArray<UITabBarItem *> * _Nonnull)items;
+- (void)tabBar:(UITabBar * _Nonnull)tabBar didEndCustomizingItems:(NSArray<UITabBarItem *> * _Nonnull)items changed:(BOOL)changed;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIImage;
+@class UIColor;
+
+/// ACTabBarItem inherits from UITabBarItem, the purpose is to provide UITabBarItem property settings for ACTabBarItemContentView.
+/// Support most commonly used attributes, such as image, selectedImage, title, tag etc.
+/// Unsupport properties:
+/// MARK: UIBarItem properties
+/// 1. var landscapeImagePhone: UIImage?
+/// 2. var imageInsets: UIEdgeInsets
+/// 3. var landscapeImagePhoneInsets: UIEdgeInsets
+/// 4. func setTitleTextAttributes(_ attributes: [String : Any]?, for state: UIControlState)
+/// 5. func titleTextAttributes(for state: UIControlState) -> [String : Any]?
+/// MARK: UITabBarItem properties
+/// 1. func setBadgeTextAttributes(_ textAttributes: [String : Any]?, for state: UIControlState)
+/// 2. func badgeTextAttributes(for state: UIControlState) -> [String : Any]?
+SWIFT_CLASS("_TtC4MVVM12ACTabBarItem") SWIFT_AVAILABILITY(ios,introduced=8.0)
+@interface ACTabBarItem : UITabBarItem
+/// The receiver’s tag, an application-supplied integer that you can use to identify bar item objects in your application. default is <code>0</code>
+@property (nonatomic) NSInteger tag;
+/// A Boolean value indicating whether the item is enabled, default is <code>YES</code>.
+@property (nonatomic, getter=isEnabled) BOOL enabled;
+/// The title displayed on the item, default is <code>nil</code>
+@property (nonatomic, copy) NSString * _Nullable title;
+/// The image used to represent the item, default is <code>nil</code>
+@property (nonatomic, strong) UIImage * _Nullable image;
+/// The image displayed when the tab bar item is selected, default is <code>nil</code>.
+@property (nonatomic, strong) UIImage * _Nullable selectedImage;
+/// Text that is displayed in the upper-right corner of the item with a surrounding red oval, default is <code>nil</code>.
+@property (nonatomic, copy) NSString * _Nullable badgeValue;
+/// The offset to use to adjust the title position, default is <code>UIOffset.zero</code>.
+@property (nonatomic) UIOffset titlePositionAdjustment;
+/// The background color to apply to the badge, make it available for iOS8.0 and later. If this item displays a badge, this color will be used for the badge’s background. If set to nil, the default background color will be used instead.
+@property (nonatomic, strong) UIColor * _Nullable badgeColor SWIFT_AVAILABILITY(ios,introduced=8.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC4MVVM21ACTabBarItemBadgeView")
+@interface ACTabBarItemBadgeView : UIView
+/// Initializer
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
+- (CGSize)sizeThatFits:(CGSize)size SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC4MVVM23ACTabBarItemContentView")
+@interface ACTabBarItemContentView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4MVVM27ACTabBarItemMoreContentView")
+@interface ACTabBarItemMoreContentView : ACTabBarItemContentView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4MVVM15ACTableViewCell")
+@interface ACTableViewCell : UITableViewCell
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+@end
+
 
 SWIFT_CLASS("_TtC4MVVM13MVVMViewModel")
 @interface MVVMViewModel : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+@interface UIButton (SWIFT_EXTENSION(MVVM))
+- (void)setBackgroundColor:(UIColor * _Nullable)color forState:(UIControlState)state;
+@end
+
+
+
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -425,7 +551,10 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreGraphics;
+@import Foundation;
 @import ObjectiveC;
+@import UIKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -443,11 +572,134 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class NSCoder;
+
+SWIFT_CLASS("_TtC4MVVM15ACBaseTableView")
+@interface ACBaseTableView : UITableView
+- (nonnull instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITabBarItem;
+@class UIEvent;
+
+/// ACTabBar is a highly customized subclass of UITabBar, which implements the effect of customizing tabBarItem by adding UIControl. Currently, it supports the setting of most properties of the tabBar, such as delegate, items, selectedImge, itemPositioning, itemWidth, itemSpacing, etc. In the future, the setting effect of the original properties of the tabBar will be optimized in more detail.
+SWIFT_CLASS("_TtC4MVVM8ACTabBar")
+@interface ACTabBar : UITabBar
+@property (nonatomic, copy) NSArray<UITabBarItem *> * _Nullable items;
+- (void)setItems:(NSArray<UITabBarItem *> * _Nullable)items animated:(BOOL)animated;
+- (void)beginCustomizingItems:(NSArray<UITabBarItem *> * _Nonnull)items;
+- (BOOL)endCustomizingAnimated:(BOOL)animated SWIFT_WARN_UNUSED_RESULT;
+- (void)layoutSubviews;
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@class UIViewController;
+@class NSString;
+@class NSBundle;
+
+SWIFT_CLASS("_TtC4MVVM18ACTabBarController")
+@interface ACTabBarController : UITabBarController
+/// Observer tabBarController’s selectedViewController. change its selection when it will-set.
+@property (nonatomic, strong) UIViewController * _Nullable selectedViewController;
+/// Observer tabBarController’s selectedIndex. change its selection when it will-set.
+@property (nonatomic) NSUInteger selectedIndex;
+/// Customize set tabBar use KVC.
+- (void)viewDidLoad;
+- (void)tabBar:(UITabBar * _Nonnull)tabBar didSelectItem:(UITabBarItem * _Nonnull)item;
+- (void)tabBar:(UITabBar * _Nonnull)tabBar willBeginCustomizingItems:(NSArray<UITabBarItem *> * _Nonnull)items;
+- (void)tabBar:(UITabBar * _Nonnull)tabBar didEndCustomizingItems:(NSArray<UITabBarItem *> * _Nonnull)items changed:(BOOL)changed;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIImage;
+@class UIColor;
+
+/// ACTabBarItem inherits from UITabBarItem, the purpose is to provide UITabBarItem property settings for ACTabBarItemContentView.
+/// Support most commonly used attributes, such as image, selectedImage, title, tag etc.
+/// Unsupport properties:
+/// MARK: UIBarItem properties
+/// 1. var landscapeImagePhone: UIImage?
+/// 2. var imageInsets: UIEdgeInsets
+/// 3. var landscapeImagePhoneInsets: UIEdgeInsets
+/// 4. func setTitleTextAttributes(_ attributes: [String : Any]?, for state: UIControlState)
+/// 5. func titleTextAttributes(for state: UIControlState) -> [String : Any]?
+/// MARK: UITabBarItem properties
+/// 1. func setBadgeTextAttributes(_ textAttributes: [String : Any]?, for state: UIControlState)
+/// 2. func badgeTextAttributes(for state: UIControlState) -> [String : Any]?
+SWIFT_CLASS("_TtC4MVVM12ACTabBarItem") SWIFT_AVAILABILITY(ios,introduced=8.0)
+@interface ACTabBarItem : UITabBarItem
+/// The receiver’s tag, an application-supplied integer that you can use to identify bar item objects in your application. default is <code>0</code>
+@property (nonatomic) NSInteger tag;
+/// A Boolean value indicating whether the item is enabled, default is <code>YES</code>.
+@property (nonatomic, getter=isEnabled) BOOL enabled;
+/// The title displayed on the item, default is <code>nil</code>
+@property (nonatomic, copy) NSString * _Nullable title;
+/// The image used to represent the item, default is <code>nil</code>
+@property (nonatomic, strong) UIImage * _Nullable image;
+/// The image displayed when the tab bar item is selected, default is <code>nil</code>.
+@property (nonatomic, strong) UIImage * _Nullable selectedImage;
+/// Text that is displayed in the upper-right corner of the item with a surrounding red oval, default is <code>nil</code>.
+@property (nonatomic, copy) NSString * _Nullable badgeValue;
+/// The offset to use to adjust the title position, default is <code>UIOffset.zero</code>.
+@property (nonatomic) UIOffset titlePositionAdjustment;
+/// The background color to apply to the badge, make it available for iOS8.0 and later. If this item displays a badge, this color will be used for the badge’s background. If set to nil, the default background color will be used instead.
+@property (nonatomic, strong) UIColor * _Nullable badgeColor SWIFT_AVAILABILITY(ios,introduced=8.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC4MVVM21ACTabBarItemBadgeView")
+@interface ACTabBarItemBadgeView : UIView
+/// Initializer
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
+- (CGSize)sizeThatFits:(CGSize)size SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC4MVVM23ACTabBarItemContentView")
+@interface ACTabBarItemContentView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4MVVM27ACTabBarItemMoreContentView")
+@interface ACTabBarItemMoreContentView : ACTabBarItemContentView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4MVVM15ACTableViewCell")
+@interface ACTableViewCell : UITableViewCell
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+@end
+
 
 SWIFT_CLASS("_TtC4MVVM13MVVMViewModel")
 @interface MVVMViewModel : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+@interface UIButton (SWIFT_EXTENSION(MVVM))
+- (void)setBackgroundColor:(UIColor * _Nullable)color forState:(UIControlState)state;
+@end
+
+
+
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

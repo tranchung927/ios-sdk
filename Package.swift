@@ -16,7 +16,6 @@ let package = Package(
         .library(name: "AppRouter",targets: ["AppRouter"]),
         .library(name: "CoordinatorLayout",targets: ["CoordinatorLayout"]),
         .library(name: "TransitionController",targets: ["TransitionController"]),
-        .library(name: "UIComponent",targets: ["UIComponent"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -30,6 +29,5 @@ let package = Package(
         .binaryTarget(name: "AppRouter", path: "Sources/AppRouter.xcframework"),
         .binaryTarget(name: "CoordinatorLayout", path: "Sources/CoordinatorLayout.xcframework"),
         .binaryTarget(name: "TransitionController", path: "Sources/TransitionController.xcframework"),
-        .binaryTarget(name: "UIComponent", path: "Sources/UIComponent.xcframework"),
     ]
 )
