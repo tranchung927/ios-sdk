@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		E1F5JwSMjA7HubWw9VLHmOxItZs=
+		C9m1ABKe1KIEkulMjMnlQ6XBr3k=
 		</data>
 		<key>Modules/AppNetworking.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -22,11 +22,11 @@
 		</data>
 		<key>Modules/AppNetworking.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		G98/4sItjtrSKhgWgS3ZvarA88w=
+		lgoBxINDJhxfiG5rI9T/ZpxXqrM=
 		</data>
 		<key>Modules/AppNetworking.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		cb0Zdy/ynN2Zm37q3fX/YL7VxNg=
+		UQA/Yz0fehYac+GYIl4pz9Xsl9A=
 		</data>
 		<key>Modules/AppNetworking.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/AppNetworking.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		0jLXO0WUgzxTXdiMJDsvfUFawuk=
+		bL8j9F/Cuj4FBKl81oen9fTmT1w=
 		</data>
 		<key>Modules/AppNetworking.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		1dFXOsCPleJzlii2JAbYry4ig9Q=
+		Bv0ieHlFbxh4tL3mIo3jKzlwIuQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -72,14 +72,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qcQc4v7MMv9b7AXU7jNJ+nqHGatGm7oeBaJR7Z/z3R8=
+			xK8TFDyxKunEWkEJCsjj+WFrdcIBLnnAR2vJxWwGBQo=
 			</data>
 		</dict>
 		<key>Modules/AppNetworking.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IvVYVvz913I+ESF8tTl1Ms/Hel/sVqqz7iJYo7RwuKU=
+			/6O77YebpvvgYwD5rfPe+VQurZyVHCH5ihZfHpOt+cY=
 			</data>
 		</dict>
 		<key>Modules/AppNetworking.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -93,14 +93,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yizQe5SJclSIaVSi53asjSvD83oeDS0YWno4g7i70Pg=
+			SKKa5IYA4RGhz3o0pxZbtkcYsuKm4CNvNov3e4YoDp0=
 			</data>
 		</dict>
 		<key>Modules/AppNetworking.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iIuQMQkjy+UDxGzmiUcau4bDqsqCqmeNa0vCCq8IY5w=
+			ktiyw4tTL9zqCSffI31SGgoHRsYeF97slm1t8V3djlo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

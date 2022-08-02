@@ -23,14 +23,6 @@ import _Concurrency
   }
   @objc deinit
 }
-public struct EmptyResponse : Swift.Codable {
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct BoolResponse : Swift.Decodable {
-  public let success: Swift.Bool?
-  public init(from decoder: Swift.Decoder) throws
-}
 public protocol IDataTask {
   func cancel()
   func resume()
@@ -319,7 +311,7 @@ public protocol APIEndpoint {
   var port: Swift.Int? { get }
 }
 public protocol APIResponse : Swift.Decodable {
-  func isSuccessfull() -> Swift.Bool
+  func isSuccessfull() throws -> Swift.Bool
 }
 final public class URLEncodedDataBuilder {
   public init()
