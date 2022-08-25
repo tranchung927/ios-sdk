@@ -44,7 +44,7 @@ import _Concurrency
   @_Concurrency.MainActor(unsafe) open func updateDisplay(with data: Any?)
   @objc deinit
 }
-public protocol PViewModel {
+public protocol PViewModel : AnyObject {
   func viewModelDidReady()
   func viewModelWillActive()
   func viewModelDidActive()

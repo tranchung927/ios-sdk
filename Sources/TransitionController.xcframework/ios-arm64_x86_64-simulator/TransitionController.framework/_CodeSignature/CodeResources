@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/TransitionController-Swift.h</key>
 		<data>
-		3NvHBRqHzSSeJ5u683SEdv88B0E=
+		knsuNAzt2sG0KSulhyNEA8FDxBY=
 		</data>
 		<key>Headers/TransitionController.h</key>
 		<data>
@@ -14,55 +14,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		sRtNd2nVqg0hOuLz9XVjAgvjc1s=
+		ZmE08Q/vUePwwVgZq+SXkvWrMSk=
 		</data>
 		<key>Modules/TransitionController.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		MYWR7qHk/5bmosd2uG53c033eiM=
+		o4meIAV9rnKmwZqG7tQ7e/VVmdA=
 		</data>
 		<key>Modules/TransitionController.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		nTUlHg8EmkJLg2A4Mh0xyUnk0sE=
+		UdJBOglWvnNchpM+n63ud+NNpaE=
 		</data>
 		<key>Modules/TransitionController.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		wx2yWVeVs7oGHYXXelCy3vnMfqM=
-		</data>
-		<key>Modules/TransitionController.swiftmodule/arm64.swiftdoc</key>
-		<data>
-		MYWR7qHk/5bmosd2uG53c033eiM=
-		</data>
-		<key>Modules/TransitionController.swiftmodule/arm64.swiftinterface</key>
-		<data>
-		nTUlHg8EmkJLg2A4Mh0xyUnk0sE=
-		</data>
-		<key>Modules/TransitionController.swiftmodule/arm64.swiftmodule</key>
-		<data>
-		wx2yWVeVs7oGHYXXelCy3vnMfqM=
+		akucfy1LHa5sE0ZhjA6bCht8dBU=
 		</data>
 		<key>Modules/TransitionController.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Hq/LsJvxIpKt/neMLkOd6Nx48cY=
+		6DFiIk/v81kRgbkUIrZacQ19cIY=
 		</data>
 		<key>Modules/TransitionController.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		gW7+h6Ozz2M/xKkGXBYow6nyOgY=
+		yRSvo8vZW4Nm+tZVp5pRMwea7Kc=
 		</data>
 		<key>Modules/TransitionController.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		fXpWBWjMJL22zUk2oMk390bA40E=
-		</data>
-		<key>Modules/TransitionController.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		Hq/LsJvxIpKt/neMLkOd6Nx48cY=
-		</data>
-		<key>Modules/TransitionController.swiftmodule/x86_64.swiftinterface</key>
-		<data>
-		gW7+h6Ozz2M/xKkGXBYow6nyOgY=
-		</data>
-		<key>Modules/TransitionController.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		fXpWBWjMJL22zUk2oMk390bA40E=
+		5kYi22muuisNtOmFlkR4wDtagaU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -75,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JDE3Kzygzk5CI8gk1HMJjnb2au/JiXoGA+JZyIIzZC0=
+			KCHiUoCkRinnDNfPs6foo348u2NJMfnNFgIIJfi5oik=
 			</data>
 		</dict>
 		<key>Headers/TransitionController.h</key>
@@ -89,84 +65,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5H7byBSLUgCo+8r4ir0rSM9cN8ZqbhPfNgb8LFiGE4g=
+			Efq0FlDLMMYqFeJph/53vZn+veFOv0O4D+b1URvkLSo=
 			</data>
 		</dict>
 		<key>Modules/TransitionController.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aSIgZhaSCkCl7EgYSDu9SERuo9w2LnAP7LGH3eIFDpY=
+			w8HlwGkfGSrSbhEWLPqzH3D5g1p7Y+rrWgess3vhcMA=
 			</data>
 		</dict>
 		<key>Modules/TransitionController.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DCzfaWj8/b546qYtevD9mJc4oSsaoRvxKU1wnYImCw8=
-			</data>
-		</dict>
-		<key>Modules/TransitionController.swiftmodule/arm64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			5H7byBSLUgCo+8r4ir0rSM9cN8ZqbhPfNgb8LFiGE4g=
-			</data>
-		</dict>
-		<key>Modules/TransitionController.swiftmodule/arm64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			aSIgZhaSCkCl7EgYSDu9SERuo9w2LnAP7LGH3eIFDpY=
-			</data>
-		</dict>
-		<key>Modules/TransitionController.swiftmodule/arm64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			DCzfaWj8/b546qYtevD9mJc4oSsaoRvxKU1wnYImCw8=
+			JR9TJYVBPyogSkVZczvzMCxL1cSnMo/t6D1pMYiEw/s=
 			</data>
 		</dict>
 		<key>Modules/TransitionController.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xOfne1JKmTQpdCFWk/REcLXcle57f3peVR2uwnvTe5c=
+			azxB8/gfmUyRye5GxmNrRUeoZFOyPM7giDqz7eWq/TA=
 			</data>
 		</dict>
 		<key>Modules/TransitionController.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZgZkIrJdGVPUW6/sRx6XDUD71usbZH5TNUm/LLbl5CA=
+			Kdd39HfR92tltJIaPxlg+UOITMhOUH00kJFg7yh2VLc=
 			</data>
 		</dict>
 		<key>Modules/TransitionController.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mrYmQI0Wbig3sZ2wPXiY991w91wSDyLxdFKhAbHL/Uc=
-			</data>
-		</dict>
-		<key>Modules/TransitionController.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			xOfne1JKmTQpdCFWk/REcLXcle57f3peVR2uwnvTe5c=
-			</data>
-		</dict>
-		<key>Modules/TransitionController.swiftmodule/x86_64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ZgZkIrJdGVPUW6/sRx6XDUD71usbZH5TNUm/LLbl5CA=
-			</data>
-		</dict>
-		<key>Modules/TransitionController.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			mrYmQI0Wbig3sZ2wPXiY991w91wSDyLxdFKhAbHL/Uc=
+			gO+JrqGBB+Bdoy4iXgVWQJLUNny/OuLIShCYpaWUrWw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

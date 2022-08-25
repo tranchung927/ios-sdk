@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/CoordinatorLayout-Swift.h</key>
 		<data>
-		1WRjF/UZgGIccqyWp0l0Fj/tC34=
+		dJi/esxKdA9vdgHa+Vpk5Y+/Xmg=
 		</data>
 		<key>Headers/CoordinatorLayout.h</key>
 		<data>
@@ -14,55 +14,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		IehsfSqq8nSpTekX1gwqJvrw2es=
+		z6DE8z2tbew8apRyAGHuAGLHll0=
 		</data>
 		<key>Modules/CoordinatorLayout.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		NfRJ04fWP1tWmy5GjGuxclgXclE=
+		W/XrqKtX3gl+hP1xBoCaHZFOc4k=
 		</data>
 		<key>Modules/CoordinatorLayout.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		t/AHfMFy2r0KRZEFkAgY5/ohlaU=
+		Cp1IJj1WMRRxkbnbIALtZ3ODmBc=
 		</data>
 		<key>Modules/CoordinatorLayout.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		GD5v2dN0apXug5LTEcn+I5r0vxg=
-		</data>
-		<key>Modules/CoordinatorLayout.swiftmodule/arm64.swiftdoc</key>
-		<data>
-		NfRJ04fWP1tWmy5GjGuxclgXclE=
-		</data>
-		<key>Modules/CoordinatorLayout.swiftmodule/arm64.swiftinterface</key>
-		<data>
-		t/AHfMFy2r0KRZEFkAgY5/ohlaU=
-		</data>
-		<key>Modules/CoordinatorLayout.swiftmodule/arm64.swiftmodule</key>
-		<data>
-		GD5v2dN0apXug5LTEcn+I5r0vxg=
+		gApbhc4gYNC4FeGXdbShPNWBkNs=
 		</data>
 		<key>Modules/CoordinatorLayout.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		R3O48x1l4kEdBxoI0qxq86NutdQ=
+		k/1cA4rkxY1xYXXeRMkM5uwtGJs=
 		</data>
 		<key>Modules/CoordinatorLayout.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		lL6a74KKN0JWkfZYS8Tcjy3z6BI=
+		SiFKHOPa2wvWLQU5tsy5d82sOcY=
 		</data>
 		<key>Modules/CoordinatorLayout.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		mZuZhBXbzVn1UVMvfGZJhHwvBIY=
-		</data>
-		<key>Modules/CoordinatorLayout.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		R3O48x1l4kEdBxoI0qxq86NutdQ=
-		</data>
-		<key>Modules/CoordinatorLayout.swiftmodule/x86_64.swiftinterface</key>
-		<data>
-		lL6a74KKN0JWkfZYS8Tcjy3z6BI=
-		</data>
-		<key>Modules/CoordinatorLayout.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		mZuZhBXbzVn1UVMvfGZJhHwvBIY=
+		+SIE3+/rF70OYt3FStXzk8DALqA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -75,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0czt8siEitsEzi6mT5QiZKlQ2VGIB4kpIFX6BTfsRDM=
+			WlEQlinBZZi2EfWCg1HMrF4KHA6Iff3wDXSBqYzExAk=
 			</data>
 		</dict>
 		<key>Headers/CoordinatorLayout.h</key>
@@ -89,84 +65,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fRTy3OXAci7OzrkHpIdGQL9rrqNI+suaT3VLUYFZAo0=
+			mooeaYvEHSDnS4+O1WAERpUMS3ND8KrqNr/FAEuqLQE=
 			</data>
 		</dict>
 		<key>Modules/CoordinatorLayout.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			P7UAAiJbctnomS7S1VrMfW12+LY9Z3lRkOIuYV2kUTc=
+			N16pDbGzR2LlImw1iMgweeUU3Uc1Rg3Ufz1MG2d+Oog=
 			</data>
 		</dict>
 		<key>Modules/CoordinatorLayout.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lDrA3bXuVSYHR2KTysWM5bKOC8rACSqkQLf6asa00ss=
-			</data>
-		</dict>
-		<key>Modules/CoordinatorLayout.swiftmodule/arm64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			fRTy3OXAci7OzrkHpIdGQL9rrqNI+suaT3VLUYFZAo0=
-			</data>
-		</dict>
-		<key>Modules/CoordinatorLayout.swiftmodule/arm64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			P7UAAiJbctnomS7S1VrMfW12+LY9Z3lRkOIuYV2kUTc=
-			</data>
-		</dict>
-		<key>Modules/CoordinatorLayout.swiftmodule/arm64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			lDrA3bXuVSYHR2KTysWM5bKOC8rACSqkQLf6asa00ss=
+			KY5xkEoRQTCrmTN+mvWzy/TBklDDYfQ8ROt5HW+ZyZ8=
 			</data>
 		</dict>
 		<key>Modules/CoordinatorLayout.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6NftuHxm08YjbgFZZDNtn1z38m4ZJZsbIupzZK46PEQ=
+			fwy1O8PSCC+JTroloLhuxNwM1O7BdRJy+O8hkZn55dU=
 			</data>
 		</dict>
 		<key>Modules/CoordinatorLayout.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tj60mBtp6YoCl6D+Q3JGcSEHwmCCdPTF56C8wB3mkoo=
+			AeM8+Rm8REZ0Mbccs7nzsZUfasDEyWAJLFhNvENfLgM=
 			</data>
 		</dict>
 		<key>Modules/CoordinatorLayout.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+PFCRqYF1Fbl1TaFnto3Cf7Z/a9Z3dnB6gyE9aFf9TU=
-			</data>
-		</dict>
-		<key>Modules/CoordinatorLayout.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			6NftuHxm08YjbgFZZDNtn1z38m4ZJZsbIupzZK46PEQ=
-			</data>
-		</dict>
-		<key>Modules/CoordinatorLayout.swiftmodule/x86_64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			tj60mBtp6YoCl6D+Q3JGcSEHwmCCdPTF56C8wB3mkoo=
-			</data>
-		</dict>
-		<key>Modules/CoordinatorLayout.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			+PFCRqYF1Fbl1TaFnto3Cf7Z/a9Z3dnB6gyE9aFf9TU=
+			iTdyTuvMRWDO02uCwoVf6J6+DvoZ/4loNCi2dlp8qGY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

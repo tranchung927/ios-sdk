@@ -1,9 +1,10 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AppRouter
 @_exported import AppRouter
 import Swift
 import UIKit
+import _Concurrency
 @objc open class Coordinator : ObjectiveC.NSObject {
   public enum NavigationType {
     case currentFlow
@@ -24,34 +25,32 @@ import UIKit
   public func presentChild(coordinator: AppRouter.Coordinator, animated: Swift.Bool)
   public func dismissChild(_ coordinator: AppRouter.Coordinator, animated: Swift.Bool)
   public func popChild(_ coordinator: AppRouter.Coordinator, animated: Swift.Bool)
-  @objc override dynamic public init()
   @objc deinit
 }
-extension Coordinator : AppRouter.Presentable {
+extension AppRouter.Coordinator : AppRouter.Presentable {
   public func toPresentable() -> UIKit.UIViewController
 }
-@objc open class Router : ObjectiveC.NSObject, AppRouter.Presentable, UIKit.UINavigationControllerDelegate {
-  public init(navigationController: UIKit.UINavigationController = UINavigationController())
-  open func toPresentable() -> UIKit.UIViewController
+@objc @_Concurrency.MainActor(unsafe) open class Router : ObjectiveC.NSObject, AppRouter.Presentable, UIKit.UINavigationControllerDelegate {
+  @_Concurrency.MainActor(unsafe) public init(navigationController: UIKit.UINavigationController = UINavigationController())
+  @_Concurrency.MainActor(unsafe) open func toPresentable() -> UIKit.UIViewController
   @objc deinit
-  public func present(_ presentable: AppRouter.Presentable, animated: Swift.Bool = true, completion: (() -> Swift.Void)? = nil)
-  public func dismiss(_ presentable: AppRouter.Presentable, animated: Swift.Bool = true, completion: (() -> Swift.Void)? = nil)
-  public func dismiss(coordinator: AppRouter.Coordinator, animated: Swift.Bool = true, completion: (() -> Swift.Void)? = nil)
-  public func removeLatestSameTypeAndPush(_ presentable: AppRouter.Presentable, animated: Swift.Bool = true)
-  public func replace(_ presentable: AppRouter.Presentable, animated: Swift.Bool = true)
-  public func remove(_ viewControllerTypes: [UIKit.UIViewController.Type])
-  public func push(_ presentable: AppRouter.Presentable, animated: Swift.Bool = true, completion: (() -> Swift.Void)? = nil)
-  public func pop(animated: Swift.Bool = true, completion: (() -> Swift.Void)? = nil)
-  public func setRoot(_ presentable: AppRouter.Presentable, hideBar: Swift.Bool = false, completion: (() -> Swift.Void)? = nil)
-  public func popToRoot(animated: Swift.Bool, completion: (() -> Swift.Void)? = nil)
-  public func popTo(_ presentable: AppRouter.Presentable, animated: Swift.Bool = true)
-  public func popTo(viewControllerType: UIKit.UIViewController.Type, completion: (() -> Swift.Void)? = nil)
-  @objc public func navigationController(_ navigationController: UIKit.UINavigationController, didShow viewController: UIKit.UIViewController, animated: Swift.Bool)
-  @objc override dynamic public init()
+  @_Concurrency.MainActor(unsafe) public func present(_ presentable: AppRouter.Presentable, animated: Swift.Bool = true, completion: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) public func dismiss(_ presentable: AppRouter.Presentable, animated: Swift.Bool = true, completion: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) public func dismiss(coordinator: AppRouter.Coordinator, animated: Swift.Bool = true, completion: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) public func removeLatestSameTypeAndPush(_ presentable: AppRouter.Presentable, animated: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) public func replace(_ presentable: AppRouter.Presentable, animated: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) public func remove(_ viewControllerTypes: [UIKit.UIViewController.Type])
+  @_Concurrency.MainActor(unsafe) public func push(_ presentable: AppRouter.Presentable, animated: Swift.Bool = true, completion: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) public func pop(animated: Swift.Bool = true, completion: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) public func setRoot(_ presentable: AppRouter.Presentable, hideBar: Swift.Bool = false, completion: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) public func popToRoot(animated: Swift.Bool, completion: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) public func popTo(_ presentable: AppRouter.Presentable, animated: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) public func popTo(viewControllerType: UIKit.UIViewController.Type, completion: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) @objc public func navigationController(_ navigationController: UIKit.UINavigationController, didShow viewController: UIKit.UIViewController, animated: Swift.Bool)
 }
 public protocol Presentable : AnyObject {
   func toPresentable() -> UIKit.UIViewController
 }
-extension UIViewController : AppRouter.Presentable {
-  public func toPresentable() -> UIKit.UIViewController
+extension UIKit.UIViewController : AppRouter.Presentable {
+  @_Concurrency.MainActor(unsafe) public func toPresentable() -> UIKit.UIViewController
 }

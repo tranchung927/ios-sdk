@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/AppRouter-Swift.h</key>
 		<data>
-		e6FHdKmd8VAJyrnFKbEu8xSFVRo=
+		IAvue9C5DJafkF7v05R+p5m4Dos=
 		</data>
 		<key>Headers/AppRouter.h</key>
 		<data>
@@ -14,55 +14,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		1iXhkvao20pC4jcK7bOzwh6fXBs=
+		ff42Ko+3e+Y9NCNrfySxq/eiOCk=
 		</data>
 		<key>Modules/AppRouter.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		6iUCn/Qcvi+rFYiSgmLUKZ/8VTk=
+		Mkf9KCPvebE7CAZMNYHHq/b2JHo=
 		</data>
 		<key>Modules/AppRouter.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		w81AP2Y64N+z35TQrikPJxZ6sUg=
+		/QCCjYB35909RflfD+e8ZJlaNnw=
 		</data>
 		<key>Modules/AppRouter.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		qV9E1vYH4mfUz7tqc9zZJdbShYg=
-		</data>
-		<key>Modules/AppRouter.swiftmodule/arm64.swiftdoc</key>
-		<data>
-		6iUCn/Qcvi+rFYiSgmLUKZ/8VTk=
-		</data>
-		<key>Modules/AppRouter.swiftmodule/arm64.swiftinterface</key>
-		<data>
-		w81AP2Y64N+z35TQrikPJxZ6sUg=
-		</data>
-		<key>Modules/AppRouter.swiftmodule/arm64.swiftmodule</key>
-		<data>
-		qV9E1vYH4mfUz7tqc9zZJdbShYg=
+		iTysXzWRhSpUzaYxhNwrcv6KOsU=
 		</data>
 		<key>Modules/AppRouter.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		PiA9qQiqZ3HZOeRj6UPONA+WUSs=
+		T52xL4D1NmVYtg0V7wxxgWdfsr4=
 		</data>
 		<key>Modules/AppRouter.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		ePmhbDkasrHyOvRJdtFXzIODnRw=
+		/6GBncoR78NQ0FE+BkinZ3YyGF8=
 		</data>
 		<key>Modules/AppRouter.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		k2MG+crtgSrgVz/y+zg9KTyXAfc=
-		</data>
-		<key>Modules/AppRouter.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		PiA9qQiqZ3HZOeRj6UPONA+WUSs=
-		</data>
-		<key>Modules/AppRouter.swiftmodule/x86_64.swiftinterface</key>
-		<data>
-		ePmhbDkasrHyOvRJdtFXzIODnRw=
-		</data>
-		<key>Modules/AppRouter.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		k2MG+crtgSrgVz/y+zg9KTyXAfc=
+		49QSu3H15aquBLdL7mMOKAdwtY0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -75,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ozJIe5yGJGRDYmQI6KOQ/AQPGvya2c1v4jCnENmddps=
+			VKppkLQNUxwQS9CDF/BYtkM3NjLQC0qt2Dw8ayTXceo=
 			</data>
 		</dict>
 		<key>Headers/AppRouter.h</key>
@@ -89,84 +65,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uPLmN4U0LZ3IsJjriTrttf8c8yM+UnpAdqF4ZYULgVo=
+			FkzjTvtfiOIqav/xXXyrNUCQy53hFDP81oxdBpUE0+4=
 			</data>
 		</dict>
 		<key>Modules/AppRouter.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YgJ7u7KyepqtvaIyguIt3mRN0KNK0NrBx+CID/nDnaE=
+			otSI24EBeAV1859UFKxv++gVM7vZdSkov847RLei5J8=
 			</data>
 		</dict>
 		<key>Modules/AppRouter.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			l+K212e0Ml6wENZgRG/aaYwLCrQHimUM8LbYGyHpxDk=
-			</data>
-		</dict>
-		<key>Modules/AppRouter.swiftmodule/arm64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			uPLmN4U0LZ3IsJjriTrttf8c8yM+UnpAdqF4ZYULgVo=
-			</data>
-		</dict>
-		<key>Modules/AppRouter.swiftmodule/arm64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			YgJ7u7KyepqtvaIyguIt3mRN0KNK0NrBx+CID/nDnaE=
-			</data>
-		</dict>
-		<key>Modules/AppRouter.swiftmodule/arm64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			l+K212e0Ml6wENZgRG/aaYwLCrQHimUM8LbYGyHpxDk=
+			M6M2hSnu0jXhr4PkNaWN7kLsNHs/rrj3RaXItjqYOeY=
 			</data>
 		</dict>
 		<key>Modules/AppRouter.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eMMqHRP1CZHe9LS0JcFmmUuCOASHo1rZU+qVHU64fxg=
+			2gIaD0TWMrz9vXwkWTsGvznQf9w2c1aqsS8E2een2dE=
 			</data>
 		</dict>
 		<key>Modules/AppRouter.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ho/TZsyIBD+2IlIWfrRxo5fYZdmT97o0brMwTBjCVsU=
+			wn97Y/sxir7TLUlgetXzYNZ9e1eB2ILiQHNq8VZx4jo=
 			</data>
 		</dict>
 		<key>Modules/AppRouter.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6EktDzdnIe24q1qdWJCm3C15Y4XTFUa2zYxVu2O5W2o=
-			</data>
-		</dict>
-		<key>Modules/AppRouter.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			eMMqHRP1CZHe9LS0JcFmmUuCOASHo1rZU+qVHU64fxg=
-			</data>
-		</dict>
-		<key>Modules/AppRouter.swiftmodule/x86_64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Ho/TZsyIBD+2IlIWfrRxo5fYZdmT97o0brMwTBjCVsU=
-			</data>
-		</dict>
-		<key>Modules/AppRouter.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			6EktDzdnIe24q1qdWJCm3C15Y4XTFUa2zYxVu2O5W2o=
+			d1OR1WxpCK7i/c9/+gjA1Uywgf0rwwHxrw19wHhIxgs=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
