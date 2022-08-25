@@ -14,8 +14,8 @@ let package = Package(
         .library(name: "MVVM",targets: ["MVVM"]),
         .library(name: "AppNetworking",targets: ["AppNetworking"]),
         .library(name: "AppRouter",targets: ["AppRouter"]),
-        .library(name: "CoordinatorLayout",targets: ["CoordinatorLayout"]),
-        .library(name: "TransitionController",targets: ["TransitionController"]),
+//        .library(name: "CoordinatorLayout",targets: ["CoordinatorLayout"]),
+//        .library(name: "TransitionController",targets: ["TransitionController"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -27,7 +27,7 @@ let package = Package(
         .binaryTarget(name: "MVVM", path: "Sources/MVVM.xcframework"),
         .binaryTarget(name: "AppNetworking", path: "Sources/AppNetworking.xcframework"),
         .binaryTarget(name: "AppRouter", path: "Sources/AppRouter.xcframework"),
-        .binaryTarget(name: "CoordinatorLayout", path: "Sources/CoordinatorLayout.xcframework"),
-        .binaryTarget(name: "TransitionController", path: "Sources/TransitionController.xcframework"),
+//        .binaryTarget(name: "CoordinatorLayout", path: "Sources/CoordinatorLayout.xcframework"),
+//        .binaryTarget(name: "TransitionController", path: "Sources/TransitionController.xcframework"),
     ]
 )

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/MVVM-Swift.h</key>
 		<data>
-		X7Ymd3NoL6HJAFbdkNWQT4il0TM=
+		tACeIuuB+DXsTELAmmdUg+TfN1Y=
 		</data>
 		<key>Headers/MVVM.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		JHNLaBtA3P9KKexWUuLoYaeLi5Y=
+		FxTajKk3UE03pEoERIYjFyxuFmo=
 		</data>
 		<key>Localizable.strings</key>
 		<data>
@@ -22,27 +22,27 @@
 		</data>
 		<key>Modules/MVVM.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		LcsE0foFR6FMROKitdQpKqTl89o=
+		C//kFIMEOcLW8hNWSrjjT19JMgc=
 		</data>
 		<key>Modules/MVVM.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		jtYKQ/XrQSejcnDnZPki8qsMcUo=
+		k5q3hGFUB08KZ0BUvStA6XrD6Dk=
 		</data>
 		<key>Modules/MVVM.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Z+2odcqG0nr7P+ohWxqMu51iikA=
+		Jvhb4grWh7auy+ECWBmv53JL6OU=
 		</data>
 		<key>Modules/MVVM.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		4rpHx58gfR6aEMomRPVO1GXJHC8=
+		5VcyHwgMazCcTidV8/sHh0wWhko=
 		</data>
 		<key>Modules/MVVM.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		bOlXTrgqDGJU0QQBc5d5aM3nE9Y=
+		Fpk2c4lIQLC4zLAspxTWAlNjVyk=
 		</data>
 		<key>Modules/MVVM.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		U3CPEALViUIGBXjVGITpsCs3kQs=
+		vJFWZS70Bdlh94OuiYRJa0Xd+Uw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -55,7 +55,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ijpnc4HoFQkcidl/ioVfsW+L6qGRZ+MiwbXOSHe1XwE=
+			HeYZ1ls1eY5t6rLiAlSMqh29jwcdqotDcD0oOCpkCAw=
 			</data>
 		</dict>
 		<key>Headers/MVVM.h</key>
@@ -76,42 +76,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/DYZxbkeAWVcGlDHtUUwqsH+810QJUl5m2hqatWY4ow=
+			jo6PHQWx6yVrR8E2mf1s39Ijgjzq8ksu5q5abttTK8k=
 			</data>
 		</dict>
 		<key>Modules/MVVM.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FbLTOCYNk6S7JvfWaMQde1zW4Gh37Qy4ZI0OdtfHh0w=
+			KMeKOlMuzCq4UrAh13iuQBgOUVPkDfr5UILKxEja4fs=
 			</data>
 		</dict>
 		<key>Modules/MVVM.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IIS1/YYfYbPvpOT4loFIRbprjvPrf3l+FnUzSJjz4Tw=
+			6ozwSOENF87nvuGduLxF/WYY73Z2IiT1j0/Kf/7qCLs=
 			</data>
 		</dict>
 		<key>Modules/MVVM.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bBDpyWYyFBrXXUqbmK3jsxx9y8Iav6shiU40lTafrP8=
+			ZAuwMiY9qvlJ77X4J4G+T4yecmOP8qxPN6HFaJ8jtP8=
 			</data>
 		</dict>
 		<key>Modules/MVVM.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VyqyvcFDvdlrktPA3Xk2WgYVZMtwO4FfFm2BFg/jlvI=
+			Nzsqzd2ou6xPk5IINmw7i/jgCEODVRIiuXbd0vl62wU=
 			</data>
 		</dict>
 		<key>Modules/MVVM.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3TiPI2FZV/9fBmncPktD4pLH1DLzt+EcNQ8Dd7XEAnA=
+			cv4v5KfuDMoZXcqoXVwmM4qVMzmX600BVYIpg6BR66o=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
